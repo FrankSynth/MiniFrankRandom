@@ -51,7 +51,8 @@ void loop() {
   }
 }
 
-//Send voltage value to MCP4822
+//Send voltage value to MCP4822   //from https://github.com/elkayem/midi2cv
+
 void setVoltage(uint8_t dacpin, bool channel, unsigned int mV)  //select dac, select dac channel, mv Value
 {
   mV /=2; //compensate 2x gain from dac
