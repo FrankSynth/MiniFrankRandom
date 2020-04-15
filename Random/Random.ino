@@ -27,7 +27,7 @@ void setup() {
   randomSeed(analogRead(POT));
 
   //Clock interrupt
-  attachInterrupt(CLK_IN, clkInterrupt, RISING);
+  attachInterrupt(CLK_IN, clkInterrupt, FALLING);
 }
 
 void loop() {
