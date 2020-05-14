@@ -9,7 +9,7 @@
 #define CLK_IN 0   // Clock interrupt
 
 //SPI
-#define DAC_1  A2   //CS DAC_1
+#define DAC_1  A3   //CS DAC_1
 #define MOSI  4
 #define SCLK  6
 
@@ -26,13 +26,13 @@ void setup() {
   //new random seed from current potentiometer value
   randomSeed(analogRead(POT));
 
-  //Clock interrupt
+  //Clock interrupt<
   attachInterrupt(CLK_IN, clkInterrupt, FALLING);
 }
 
 void loop() {
 
-  long potVal = analogRead(POT) ;     //read potentiometer value
+  long potVal = 1023- analogRead(POT) ;     //read potentiometer value
   long wait =  potVal * potVal >> 9;  //non linear value from potentiometer value
 
   if (wait < 1950) {   //disable auto trigger, if potentiometer value is under 1950
